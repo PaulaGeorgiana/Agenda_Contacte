@@ -39,6 +39,9 @@ class ContactValidator():
     def Contact_Val(self, contact):
         erori= []
         grup=["prieteni", "familie", "job", "altele"]
+        
+        # de facut: verifica ID negativ chiar daca nu scrie in cerinta
+        
         if contact.getNume()=="":
             erori.append("Nume vid")
         if contact.getGrup() not in grup:
@@ -50,6 +53,10 @@ class ContactValidator():
             for i in nr:
                 if i not in "0123456789":
                     erori.append("numar invalid")
+                    
+                    # daca nu pui break aici sa opresti if-ul
+                    # o sa adauge cate o eroare pentru fiecare caracter care nu e cifra
+                    break
         
         if erori != []:
             raise ValueError(erori)
