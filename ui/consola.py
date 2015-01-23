@@ -20,7 +20,7 @@ class Ui():
     def afiseaza_contacte(self):
         lista=self.ctrl.getAllCtrl() 
         for contact in lista:
-            print(self.ctrl.getName(), self.ctrl.getNr_telefon()) 
+            print(contact.getNume(), contact.getNr_telefon()) 
         
     def start_ui(self):
         while True:

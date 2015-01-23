@@ -14,4 +14,4 @@ class ContactCtrl():
         self.repo.adauga(c)
     
     def getAllCtrl(self):
-        return self.repo.getAll 
+        return self.repo.getAll() 
