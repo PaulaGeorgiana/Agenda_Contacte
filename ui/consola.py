@@ -15,7 +15,11 @@ class Ui():
         nr_tel= input("Introduceti numarul de telefon: ")
         grup= input("Introduceti grupul din care va face parte: ")
         
-        self.ctrl.adauga_la_agenda(id_cont, nume, nr_tel, grup)
+        # aici prindem eroarea
+        try:
+            self.ctrl.adauga_la_agenda(id_cont, nume, nr_tel, grup)
+        except ValueError as ex:
+            print(ex)
         
     def afiseaza_contacte(self):
         lista=self.ctrl.getAllCtrl() 
