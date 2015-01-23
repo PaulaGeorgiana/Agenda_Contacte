@@ -3,8 +3,7 @@ Created on Jan 22, 2015
 
 @author: Georgiana
 
-mno cand termini ce ai vrut sa faci, dai commit -> sync si dupa ma uit peste si iti las comentarii :Dok:*:*te iubesc :* sieu te iubesc :*
-a si vezi ca oricine cu link-ul catre github.com/PaulaGeorgiana poate sa vada continutul :Dok
+cand termini ce ai vrut sa faci, dai commit -> sync si dupa ma uit peste si iti las comentarii
 '''
 
 class Contact():
