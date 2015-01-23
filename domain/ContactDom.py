@@ -41,7 +41,8 @@ class ContactValidator():
         grup=["prieteni", "familie", "job", "altele"]
         
         # de facut: verifica ID negativ chiar daca nu scrie in cerinta
-        
+        if contact.getId_contact() < 0:
+            erori.append("Id invalid")
         if contact.getNume()=="":
             erori.append("Nume vid")
         if contact.getGrup() not in grup:
