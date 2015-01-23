@@ -6,8 +6,9 @@ Created on Jan 22, 2015
 from domain.ContactDom import Contact
 
 class ContactCtrl():
-    def __init__(self, repo):
+    def __init__(self, repo, val):
         self.repo = repo
+        self.val = val
         
     def adauga_la_agenda(self, id_cont, nume, nr_tel, grup):
         c= Contact(id_cont, nume, nr_tel, grup)

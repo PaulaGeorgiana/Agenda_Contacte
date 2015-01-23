@@ -12,7 +12,7 @@ class Ui():
     def adauga(self):
         id_cont= int(input("Introduceti id-ul persoanei: "))
         nume= input("Introduceti numele: ")
-        nr_tel= int(input("Introduceti numarul de telefon: "))
+        nr_tel= input("Introduceti numarul de telefon: ")
         grup= input("Introduceti grupul din care va face parte: ")
         
         self.ctrl.adauga_la_agenda(id_cont, nume, nr_tel, grup)
