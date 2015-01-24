@@ -6,7 +6,8 @@ Created on Jan 22, 2015
 from repository.ContactRepo import ContactRepo
 from controller.ContactCTRL import ContactCtrl
 from ui.consola import Ui
-from domain.ContactDom import ContactValidator
+from domain.ContactVal import ContactValidator
+
 
 val = ContactValidator()
 repo = ContactRepo()

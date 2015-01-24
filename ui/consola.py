@@ -46,6 +46,10 @@ class Ui():
         for g in lista:
             print(g.getId_contact(), g.getNume(), g.getNr_telefon(), g.getGrup())
         
+    def exporta(self):
+        nume_fisier = input("Introduceti un  nume de fisier: ")
+        grup = input("Introduceti un nume de grup: ")
+        self.ctrl.exportCSV(grup,nume_fisier)
             
         
     def start_ui(self):
@@ -55,6 +59,7 @@ class Ui():
             print("2. afiseaza toate contactele")
             print("3. cautare dupa nume")
             print("4. tipareste lista de contacte de la un grup")
+            print("5. exporta contactele in CSV")
             print("x. exit")
             print("---------------------------------------------")
             
@@ -71,4 +76,7 @@ class Ui():
                 self.cautare_numar()
             if cmd == '4':
                 self.contacte_grup()
+            if cmd == "5":
+                self.exporta()
+                
             
