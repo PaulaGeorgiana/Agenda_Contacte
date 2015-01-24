@@ -28,4 +28,12 @@ class ContactCtrl():
     
     def cautare_numar(self,nume):
         return self.repo.cauta(nume)
-             
+    
+    def exportCSV(self, grup, numeFisier):
+        lista = self.repo.getAllFor(grup)
+        
+        f = open(numeFisier, "w")
+        for c in lista:
+            f.write(c.getId_contact() + "," + c.getNume() + "," + c.getNr_telefon() + "," + c.getGrup() + "\n")
+        f.close()
+    
