@@ -36,16 +36,31 @@ class Ui():
             print("Numele nu exista in lista de contacte")
         for c in lista:
             print(c.getId_contact(), c.getNume(), c.getNr_telefon(), c.getGrup())
+    
+    def contacte_grup(self):
+        grup=input("Introduceti un grup: ")
+        
+        lista = self.ctrl.getAllForCtrl(grup)
+        if lista == []:
+            print("Nu au fost adaugate contacte pe acest grup")
+        for g in lista:
+            print(g.getId_contact(), g.getNume(), g.getNr_telefon(), g.getGrup())
+        
+            
         
     def start_ui(self):
         while True:
+            print("")
             print("1. adauga contact")
             print("2. afiseaza toate contactele")
             print("3. cautare dupa nume")
+            print("4. tipareste lista de contacte de la un grup")
             print("x. exit")
+            print("---------------------------------------------")
+            
             
             cmd = input("Dati comanda: ")
-            
+            print("--------------------")
             if cmd == "1":
                 self.adauga()
             if cmd == 'x' :
@@ -54,4 +69,6 @@ class Ui():
                 self.afiseaza_contacte()
             if cmd == '3':
                 self.cautare_numar()
+            if cmd == '4':
+                self.contacte_grup()
             

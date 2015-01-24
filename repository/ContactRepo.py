@@ -22,7 +22,16 @@ class  ContactRepo():
     
     def cauta(self, nume):
         lista_finala=[]
-        for un_nume in self.lista:
-            if un_nume.getNume()== nume:
-                lista_finala.append(un_nume)
+        for element in self.lista:
+            if element.getNume()== nume:
+                lista_finala.append(element)
         return lista_finala
+    
+    def getAllFor(self,grup):
+        lista_finala=[]
+        for element in self.lista:
+            if element.getGrup() == grup:
+                lista_finala.append(element)
+        a= sorted(lista_finala, key=lambda x:x.getNume())
+        return a
+    

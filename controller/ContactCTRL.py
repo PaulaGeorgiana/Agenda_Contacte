@@ -23,6 +23,9 @@ class ContactCtrl():
     def getAllCtrl(self):
         return self.repo.getAll()
     
+    def getAllForCtrl(self,grup):
+        return self.repo.getAllFor(grup)
+    
     def cautare_numar(self,nume):
         return self.repo.cauta(nume)
              
