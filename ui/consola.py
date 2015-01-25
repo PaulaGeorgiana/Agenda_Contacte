@@ -54,7 +54,7 @@ class Ui():
         
     def start_ui(self):
         while True:
-            print("")
+            print("---------------------------------------------")
             print("1. adauga contact")
             print("2. afiseaza toate contactele")
             print("3. cautare dupa nume")

@@ -5,8 +5,12 @@ Created on Jan 22, 2015
 '''
 
 class  ContactRepo():
-    def __init__(self):
+    def __init__(self, numeFisier):
+        # mai iei un parametru, numeFisier si il salvezi in
+        # self.numeFisier
+ 
         self.lista = []
+        self.numeFisier = numeFisier
         
     def adauga(self, contact):
         nume = contact.getNume() # numele persoanei de adaugat
@@ -16,6 +20,8 @@ class  ContactRepo():
                 raise ValueError("Numele exista deja") # daca da, arunca eroare si se opreste executia functiei
         
         self.lista.append(contact)
+        self.scrie_fisier()
+        
         
     def getAll(self):
         return self.lista
@@ -35,3 +41,36 @@ class  ContactRepo():
         a= sorted(lista_finala, key=lambda x:x.getNume())
         return a
     
+    def citeste_fisier(self):
+        try:
+            f = open(self.numeFisier, "r")
+            f.close()
+        except FileNotFoundError:
+            # Daca fisierul nu exista, in momentul cand este deschis
+            # pentru scriere este creat automat
+            f = open(self.numeFisier, "w")
+            f.close()
+            
+        # Cand executia ajunge aici, in mod sigur fisierul exista
+        # deci e sigur sa-l deschidem pentru citire
+        f = open(self.numeFisier, "r")
+        
+        # Se citeste continutul fisierului
+        continut = f.read()
+        self.lista.append(continut)
+        
+        # Am terminat cu fisierul deci il inchidem
+        f.close()
+    
+    def scrie_fisier(self):
+        f = open(self.numeFisier, "w")
+        for c in self.lista:
+            f.write(c.getId_contact() + "," + c.getNume() + "," + c.getNr_telefon() + "," + c.getGrup() + "\n")
+        f.close()
+
+        
+    # ai nevoie de doua(noua?!)) functii
+    # una care citeste din fisier si salveaza in self.lista
+    # alta care salveaza self.lista in fisier
+    # ambele functii trebuie sa lucreze cu numele de fisier
+    # self.numeFisier
