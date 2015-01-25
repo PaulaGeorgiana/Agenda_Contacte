@@ -12,7 +12,6 @@ from domain.ContactVal import ContactValidator
 val = ContactValidator()
 # aici pur si simplu alegi un nume de fisier
 numeFisier = "contacte.txt"
-
 repo = ContactRepo(numeFisier)
 ctrl = ContactCtrl(repo,val)
 ui = Ui(ctrl)
