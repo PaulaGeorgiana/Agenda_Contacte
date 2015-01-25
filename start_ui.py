@@ -10,7 +10,7 @@ from domain.ContactVal import ContactValidator
 
 
 val = ContactValidator()
-repo = ContactRepo()
+repo = ContactRepo(numeFisier)
 ctrl = ContactCtrl(repo,val)
 ui = Ui(ctrl)
 ui.start_ui()
