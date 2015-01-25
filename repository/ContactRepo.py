@@ -3,7 +3,7 @@ Created on Jan 22, 2015
 
 @author: Georgiana
 '''
-
+from domain.ContactDom import Contact
 class  ContactRepo():
     def __init__(self, numeFisier):
         # mai iei un parametru, numeFisier si il salvezi in
@@ -11,6 +11,9 @@ class  ContactRepo():
  
         self.lista = []
         self.numeFisier = numeFisier
+        
+        # cand se creaza repo, trebuie sa citim din fisier si sa salvam in self.lista
+        self.citeste_fisier()
         
     def adauga(self, contact):
         nume = contact.getNume() # numele persoanei de adaugat
@@ -59,8 +62,14 @@ class  ContactRepo():
         continut = f.read()
         linii = continut.split("/n")
         for linie in linii:
-            element = linie.split(",")
-            self.lista.append(element)
+            # aici faci o lista de forma ['1', 'Paula', '1234', 'altele']
+            # din asta trebuie sa faci un Contact, pentru ca in self.lista ai contacte, nu alte liste
+            elemente = linie.split(",")
+            
+            if len(elemente) == 4:
+                # facem contactul
+                c = Contact(elemente[0], elemente[1], elemente[2], elemente[3])
+                self.lista.append(c) # contactul vine pus in lista
         
         # Am terminat cu fisierul deci il inchidem
         f.close()
