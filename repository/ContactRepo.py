@@ -57,7 +57,10 @@ class  ContactRepo():
         
         # Se citeste continutul fisierului
         continut = f.read()
-        self.lista.append(continut)
+        linii = continut.split("/n")
+        for linie in linii:
+            element = linie.split(",")
+            self.lista.append(element)
         
         # Am terminat cu fisierul deci il inchidem
         f.close()
